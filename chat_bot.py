@@ -11,9 +11,16 @@ from nltk.stem import WordNetLemmatizer
 import warnings
 warnings.filterwarnings('ignore')
 
-# Download required NLTK packages
-nltk.download('punkt')
-nltk.download('wordnet')
+# Download required NLTK packages if not already available
+try:
+    nltk.data.find('tokenizers/punkt')
+except LookupError:
+    nltk.download('punkt')
+
+try:
+    nltk.data.find('corpora/wordnet')
+except LookupError:
+    nltk.download('wordnet')
 
 # Read in the corpus
 try:
