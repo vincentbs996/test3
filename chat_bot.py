@@ -6,12 +6,10 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import nltk
 from nltk.stem import WordNetLemmatizer
-
-# Suppress warnings
 import warnings
 warnings.filterwarnings('ignore')
 
-# Download required NLTK packages if not already available
+# Download required NLTK packages
 try:
     nltk.data.find('tokenizers/punkt')
 except LookupError:
